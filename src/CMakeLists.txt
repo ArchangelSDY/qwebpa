@@ -79,14 +79,10 @@ set(WEBP_SRC
 set(SRCS "main.cpp" "qwebphandler.cpp" ${WEBP_SRC})
 set(CMAKE_AUTOMOC ON)
 
-# set(PUBLIC_HEADERS "qwebphandler_p.h")
-# qt_wrap_cpp(MOC_SRCS ${PUBLIC_HEADERS})
-# set(SRCS ${SRCS} ${MOC_SRCS} ${WEBP_SRC})
-
 add_library(qwebpa SHARED ${SRCS})
 set_target_properties(qwebpa PROPERTIES VERSION 1.0.0 SOVERSION 1)
-set_target_properties(qwebpa PROPERTIES LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/imageformats")
+set_target_properties(qwebpa PROPERTIES LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/imageformats")
 target_link_libraries(qwebpa Qt5::Core Qt5::Gui)
 
-# install(FILES ${PUBLIC_HEADERS} DESTINATION include/qtrar)
-# install(TARGETS qtrar LIBRARY DESTINATION ${LIB_DESTINATION} ARCHIVE DESTINATION ${LIB_DESTINATION} RUNTIME DESTINATION ${LIB_DESTINATION})
+set(LIB_DESTINATION "plugins/imageformats")
+install(TARGETS qwebpa LIBRARY DESTINATION ${LIB_DESTINATION} ARCHIVE DESTINATION ${LIB_DESTINATION} RUNTIME DESTINATION ${LIB_DESTINATION})
