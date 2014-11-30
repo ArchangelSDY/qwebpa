@@ -5,7 +5,7 @@ add_definitions(
 
 # set all include directories for in and out of source builds
 include_directories(
-	${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}/../3rdparty/libwebp/src
     ${CMAKE_CURRENT_SOURCE_DIR}/../3rdparty/libwebp/src/dec
     ${CMAKE_CURRENT_SOURCE_DIR}/../3rdparty/libwebp/src/enc
@@ -13,7 +13,7 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/../3rdparty/libwebp/src/mux
     ${CMAKE_CURRENT_SOURCE_DIR}/../3rdparty/libwebp/src/utils
     ${CMAKE_CURRENT_SOURCE_DIR}/../3rdparty/libwebp/src/webp
-	${CMAKE_CURRENT_BINARY_DIR}
+    ${CMAKE_CURRENT_BINARY_DIR}
 )
 
 set(WEBP_SRC
