@@ -35,6 +35,7 @@ foreach(TEST_FILE ${TEST_FILES})
 
     add_executable(${TEST_TARGET} ${TEST_FILE} ${RESOURCES_RCC})
     set_target_properties(${TEST_TARGET} PROPERTIES MACOSX_BUNDLE FALSE)
+    set_target_properties(${TEST_TARGET} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
     target_link_libraries(${TEST_TARGET} Qt5::Test Qt5::Gui)
     add_test(NAME ${TEST_NAME} COMMAND ${TEST_TARGET} WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
 endforeach(TEST_FILE)
